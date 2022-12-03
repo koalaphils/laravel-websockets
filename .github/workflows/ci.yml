@@ -51,7 +51,7 @@ jobs:
         mysql root password: 'password'
 
     - name: Setup Redis
-      uses: supercharge/redis-github-action@1.1.0
+      uses: supercharge/redis-github-action@1.4.0
       with:
         redis-version: 6
 
@@ -74,7 +74,7 @@ jobs:
       run: |
         REPLICATION_MODE=redis vendor/bin/phpunit --coverage-text --coverage-clover=coverage_redis.xml
 
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v3
       with:
         fail_ci_if_error: false
         file: '*.xml'
